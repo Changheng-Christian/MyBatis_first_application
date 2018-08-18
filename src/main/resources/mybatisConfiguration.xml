@@ -25,6 +25,8 @@
 
     <mappers>
         <mapper resource="sqlmap/User.xml"></mapper>
+        <mapper resource="sqlmap/Visitor.xml"></mapper>
     </mappers>
+
 
 </configuration>

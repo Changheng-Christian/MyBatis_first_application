@@ -1,14 +1,16 @@
 package com.hand.model;
 
 
-/*** 
+import java.io.Serializable;
+
+/***
  * @Description:
  * @Param:
  * @return:
  * @Author: Xu Chang Heng
  * @Date: 2018-8-17
  */
-public class User {
+public class User  {
     private int id;
     private String userName;
     private int userAge;

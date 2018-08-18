@@ -36,4 +36,21 @@ resultType：指定sql输出结果 的所映射的java对象类型，select指�
     <select id="getAll" resultType="com.hand.model.User">
         select * from user
     </select>
+<!--<parameterMap id="update" type="com.hand.model.User">-->
+    <!--<parameter property="id" jdbcType="int" resultMap="User"></parameter>-->
+    <!--<parameter property="userName" jdbcType="String" resultMap="User"></parameter>-->
+    <!--<parameter property="userAge" jdbcType=""></parameter>-->
+<!--</parameterMap>-->
+    <update id="updateUser" parameterType="com.hand.model.User">
+        update user set userName=#{user.userName}, userAge=#{user.userAge}, userAddress=#{user.userAddress} where id=#{user.id}
+    </update>
+    <insert id="insertUserList" parameterType="list"  useGeneratedKeys="true">
+        insert into user(userName, userAge, userAddress) values
+        <foreach collection="list" item="user" separator=",">
+            (#{user.userName}, #{user.userAge}, #{user.userAddress})
+      </foreach>
+    </insert>
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id = #{id}
+    </delete>
 </mapper>
